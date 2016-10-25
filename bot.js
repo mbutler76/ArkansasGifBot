@@ -22,10 +22,11 @@ function respond() {
 }
 
 function requestLink(searchTerm) {
+  var x = "No gif found. Troy is gay.";
   request('http://api.giphy.com/v1/gifs/translate?s=' + searchTerm + '&api_key=dc6zaTOxFJmzC&rating=r', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     parsedData = JSON.parse(body),
-    postMessage(parsedData.data.images.downsized.url, botID, parsedData.data.images.downsized.size);
+    postMessage(/*parsedData.data.images.downsized.url*/x, botID, parsedData.data.images.downsized.size);
     } 
   }); 
 } 
